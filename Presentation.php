@@ -51,7 +51,7 @@ include_once('Traitement.php');
         <p class="masthead-subheading font-weight-light mb-0">
             <?php
             if (isset($_SESSION['username'])) {
-                echo "Comment allez vous monsieurs l'administrateur ?";
+                echo "Admin";
             } else {
                 echo "Le portfolio de Monsieur Loukal";
             }
@@ -62,9 +62,3 @@ include_once('Traitement.php');
 </header>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

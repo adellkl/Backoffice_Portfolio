@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+  header("Location: admin.php"); 
+  exit(); 
+}
+?>
+
+<?php
 include_once('nav.php');
 
 $host = 'localhost';
@@ -24,24 +33,22 @@ if (isset($_GET['id'])) {
     $description = $resultat['description'];
 } 
 ?>
-<?php
-session_start();
-
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-  header("Location: login.php"); // rediriger vers la page de connexion
-  exit(); // arrêter l'exécution du script
-}
-?>
 
 
-<br><br><br><br>
+<br><br>
+
 
 <div class="container mt-5">
+<div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <a href="modif-portfolio.php" class="btn btn-dark">Retour</a>
+        </div>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="text-center">Modifier l'item <u> <?php echo $titre; ?></u> </h4>
+                    <h4 class="text-center">Modifier l'item <p class="p-item"> <?php echo $titre; ?></p> </h4>
                 </div>
                 <div class="card-body">
                     <form method="post" action="Item-modif.php" enctype="multipart/form-data">
@@ -57,7 +64,7 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
                             <input type="file" id="image" name="image"> <br><br>
                              <p>Ancienne photo: </p>
                             <img src="assets/img/portfolio/<?php echo $image; ?>"
-                                alt="<?php echo $titre; ?>" style="max-width: 50%; height: auto;">
+                                alt="<?php echo $titre; ?>" style="max-width: 30%; height: auto;">
                         </div> <br>
                         <div class="form-group">
                             <label for="description">Modifier la description : </label>
@@ -65,8 +72,7 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
                                 rows="3"><?php echo $description; ?></textarea>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary btn-block">Modifier l'item</button>
-                        <br><br>
+                        <button type="submit" class="btn btn-primary btn-block" onclick="return confirmerModification();">Modifier l'item</button>                        <br><br>
                     </form>
                 </div>
             </div>
@@ -74,3 +80,15 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
         </div>
     </div>
 </div>
+
+<script>
+    function confirmerModification() {
+  if (confirm("Voulez-vous vraiment modifier l'item ?")) {
+   
+    return true;
+  } else {
+
+    return false;
+  }
+}
+</script>

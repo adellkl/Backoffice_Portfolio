@@ -4221,7 +4221,8 @@ fieldset:disabled .btn {
   margin-bottom: 0;
   list-style: none;
 }
-
+.recherche {
+}
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;

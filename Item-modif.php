@@ -1,13 +1,4 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-    header("Location: login.php"); // rediriger vers la page de connexion
-    exit(); // arrêter l'exécution du script
-}
-?>
-
-<?php
 
 $host = 'localhost';
 $dbname = 'nom_etudiant_portfolio';
@@ -52,7 +43,7 @@ if (isset($_POST['id']) && isset($_POST['titre']) && isset($_FILES['image']['nam
 
     if ($req->execute()) {
         echo "Les données ont été modifiées avec succès.";
-        header('Location: index.php#portfolio');
+        header('Location: modif-portfolio.php');
         exit();
     } else {
         echo "Erreur : de la mise à jour des données.";

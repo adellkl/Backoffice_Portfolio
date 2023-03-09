@@ -13,21 +13,16 @@ try {
     echo "Erreur : " . $e->getMessage();
 }
 
-
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $pseudo = $_POST['username'];
     $mdp = $_POST['password'];
 
-
     $req = $bdd->prepare("SELECT * FROM users WHERE username=:username AND mdp=:mdp");
     $req->bindParam(':username', $pseudo);
     $req->bindParam(':mdp', $mdp);
-
-
     $req->execute();
 
     $resultat = $req->fetch();
-
 
     if ($resultat) {
 

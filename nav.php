@@ -1,4 +1,7 @@
-<!-- #Connexion a la BD -->
+<?php
+session_start();
+?>
+
 <?php
 include_once('PDOconfig.php');
 ?>
@@ -27,7 +30,8 @@ include_once('Traitement.php');
 </head>
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="index.php">Adel BOSS</a>
+        <a class="navbar-brand fade-up" href="index.php">Adel Loukal</a>
+
         <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
             data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -48,53 +52,52 @@ include_once('Traitement.php');
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" href="contact.php">Contact</a>
                 </li>
 
+
                 <?php
-                session_start();
-
-
 
                 if (isset($_SESSION['username']) && $_SESSION['username']) {
                     ?>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="add.BDD.php">Ajouter une item</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="add.BDD.php">Ajouter un item</a>
                     </li>
 
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="modif-portfolio.php">Accès au portfolio</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="modif-portfolio.php">Edit portfolio</a>
                     </li>
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" href="logout.php"
                         onclick="confirmLogout()">Déconnexion</a>
                 <?php
                 }
                 ?>
-                <script>
-
-                    const logoutBtn = document.querySelector('a[href="logout.php"]');
-
-
-                    logoutBtn.addEventListener('click', function (event) {
-
-                        event.preventDefault();
-
-                        const confirmed = confirm('Voulez-vous vraiment vous déconnecter ?');
-                        if (confirmed) {
-                            window.location.href = logoutBtn.href;
-                        }
-                    });
-
-
-                </script>
 
             </ul>
         </div>
+        <script>
 
+            const logoutBtn = document.querySelector('a[href="logout.php"]');
+
+
+            logoutBtn.addEventListener('click', function (event) {
+
+                event.preventDefault();
+
+                const confirmed = confirm('Voulez-vous vraiment vous déconnecter ?');
+                if (confirmed) {
+                    window.location.href = logoutBtn.href;
+                }
+            });
+
+            const navLinks = document.querySelectorAll('.navbar-nav a');
+
+            navLinks.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                }
+            });
+
+        </script>
     </div>
 </nav>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

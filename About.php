@@ -1,4 +1,4 @@
-<!-- #Connexion a la BD -->
+<!-- Connexion a la BD avec include_once pour ramener le fichier PDOconfig.php -->
 <?php
 include_once('PDOconfig.php');
 ?>
@@ -34,22 +34,29 @@ include_once('PDOconfig.php');
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
-        </div>
+        </div> <br>
         <!-- About Section Content-->
         <div class="row">
-            <div class="col-lg-4 ms-auto">
+            <div class="col-lg-6 ms-auto">
                 <p class="lead">
-                    Freelancer is a free bootstrap theme created by Start Bootstrap.
-                    The download includes the complete source files including HTML,
-                    CSS, and JavaScript as well as optional SASS stylesheets for easy
-                    customization.
+                    Je m’appelle Adel Loukal, je suis actuellement étudiant en BUT MMI à l’iut de Cergy pantoise et en
+                    parcours développement web et dispositifs interactifs dans lequel je m’épanouie. Je suis un grand
+                    sportif, je pratique plusieurs sports notamment la boxe thaï et la musculation, pratiquer du sport
+                    me permets de toujours garder mon calme face à toutes les situations. Passionné d’informatique et de
+                    nouvelles technologies, j’espère pourvoir faire carrières dans le métier de mes rêve qui est
+                    développeur web.
+
+
                 </p>
             </div>
-            <div class="col-lg-4 me-auto">
+            <div class="col-lg-6 me-auto">
                 <p class="lead">
-                    You can create your own custom avatar for the masthead, change the
-                    icon in the dividers, and add your email address to the contact
-                    form to make it fully functional!
+                    J’ai longtemps hésité avant de faire ce choix qui était loin d’être logique pour moi, suite a mon
+                    année de terminale je me suis découvert une véritable vocation pour l’informatique et plus
+                    précisément le fait de créer des sites, je me suis donc tout naturellement dirigé vers cette
+                    formation, et j’ai fais le bon choix.
+
+
                 </p>
             </div>
         </div>
@@ -66,9 +73,3 @@ include_once('PDOconfig.php');
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

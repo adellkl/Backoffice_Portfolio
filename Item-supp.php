@@ -1,13 +1,4 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-    header("Location: admin.php"); // rediriger vers la page de connexion
-    exit(); // arrêter l'exécution du script
-}
-?>
-
-<?php
 
 $host = 'localhost';
 $dbname = 'nom_etudiant_portfolio';
@@ -27,7 +18,7 @@ if (isset($_GET['id'])) {
     $req->bindParam(':id', $id);
     if ($req->execute()) {
         echo "L'item a été supprimé avec succès.";
-        header('Location: index.php#portfolio');
+        header('Location: modif-portfolio.php');
         exit();
     } else {
         echo "Erreur : de la suppression de l'item.";

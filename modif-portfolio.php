@@ -2,15 +2,14 @@
 <?php
 include_once('nav.php');
 ?> <br><br>
-
 <?php
-session_start();
 
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-    header("Location: admin.php"); // rediriger vers la page de connexion
-    exit(); // arrêter l'exécution du script
+    header("Location: admin.php");
+    exit();
 }
 ?>
+
 
 
 <?php
@@ -57,7 +56,7 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
 
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Edit Portfolio</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -81,7 +80,7 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="text-center mt-3">
                         <a href="Item-supp.php?id=<?= $donnee['id'] ?>" class="btn btn-danger"
-                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet item ?')">Supprimer</a>
+                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce travail ?')">Supprimer</a>
 
 
                         <a href="form_item.php?id=<?= $donnee['id'] ?>" class="btn btn-primary">Modifier</a>
@@ -139,9 +138,3 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

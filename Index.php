@@ -1,6 +1,6 @@
 <?php
 include_once('nav.php');
-?>
+?> <br><br>
 <?php
 include_once('presentation.php');
 ?>

@@ -17,6 +17,7 @@
         type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+
 </head>
 
 
@@ -47,7 +48,12 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
                 <i class="fas fa-star"></i>
             </div>
             <div class="divider-custom-line"></div>
+
+
         </div>
+
+
+
         <div class="row justify-content-center">
             <?php foreach ($donnees as $donnee): ?>
                 <div class="col-md-6 col-lg-4 mb-5">
@@ -62,6 +68,8 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
                             alt="<?= $donnee['titre'] ?>" />
                     </div>
                 </div>
+
+
 
                 <!-- Portfolio Modal -->
                 <div class="portfolio-modal modal fade" id="portfolioModal<?= $donnee['id'] ?>" tabindex="-1"
@@ -114,9 +122,3 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
