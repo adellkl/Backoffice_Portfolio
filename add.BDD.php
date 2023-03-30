@@ -45,6 +45,11 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
                                 <input type="text" class="form-control" name="titre" required>
                             </div>
                             <br>
+                            <div class="form-group">
+                                <label for="categorie">catégorie : </label>
+                                <input type="text" class="form-control" name="categorie" required>
+                            </div>
+                            <br>
 
                             <!-- création d'un champ de fichier pour ajouter une image -->
                             <div class="form-group">
@@ -72,3 +77,4 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 
 
     <br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

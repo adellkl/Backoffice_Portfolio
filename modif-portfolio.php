@@ -10,8 +10,6 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 }
 ?>
 
-
-
 <?php
 $host = 'localhost';
 $dbname = 'nom_etudiant_portfolio';

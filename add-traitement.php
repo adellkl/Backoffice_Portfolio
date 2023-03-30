@@ -15,22 +15,24 @@ try {
 }
 
 
-if (isset($_POST['titre']) && isset($_FILES['image']['name']) && isset($_POST['description'])) {
+if (isset($_POST['titre']) && isset($_FILES['image']['name']) && isset($_POST['description']) && isset($_POST['categorie'])) {
     $titre = $_POST['titre'];
+    $categorie = $_POST['categorie'];
     $image_nom = $_FILES['image']['name'];
     $image_tmp = $_FILES['image']['tmp_name'];
     $description = $_POST['description'];
 
-    // Vérification de l'extension de l'image envoyée par le formulaire
+
     $image_ext = strtolower(pathinfo($image_nom, PATHINFO_EXTENSION));
     if ($image_ext != 'jpg' && $image_ext != 'jpeg' && $image_ext != 'png' && $image_ext != 'gif') {
 
     } else {
 
-        $req = $bdd->prepare("INSERT INTO portfolio (titre, image, description) VALUES (:titre, :image, :description)");
+        $req = $bdd->prepare("INSERT INTO portfolio (titre, image, description, categorie ) VALUES (:titre, :image, :description, :categorie)");
         $req->bindParam(':titre', $titre);
         $req->bindParam(':image', $image_nom);
         $req->bindParam(':description', $description);
+        $req->bindParam(':categorie', $categorie);
 
 
         if ($req->execute()) {

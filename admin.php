@@ -11,7 +11,6 @@
 </head>
 
 
-
 <body>
 
 
@@ -29,6 +28,7 @@
                         <h4 class="text-center">Connexion Admin</h4>
                     </div>
                     <div class="card-body">
+
                         <form method="POST" action="traitement.php">
                             <div class="form-group">
                                 <label for="username">Nom d'utilisateur</label>
@@ -39,9 +39,7 @@
                                 <input type="password" class="form-control" name="password" required>
                             </div> <br>
 
-
                             <button type="submit" class="btn btn-primary btn-block">Se connecter</button> <br><br>
-
 
                         </form>
                     </div>
@@ -49,6 +47,8 @@
             </div>
         </div>
     </div><br>
+
+
 
 
 

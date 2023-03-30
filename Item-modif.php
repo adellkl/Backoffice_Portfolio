@@ -12,10 +12,11 @@ try {
     echo "Erreur : " . $e->getMessage();
 }
 
-if (isset($_POST['id']) && isset($_POST['titre']) && isset($_FILES['image']['name']) && isset($_POST['description'])) {
+if (isset($_POST['id']) && isset($_POST['titre']) && isset($_FILES['image']['name']) && isset($_POST['description']) && isset($_POST['categorie'])) {
     $id = $_POST['id'];
     $titre = $_POST['titre'];
     $description = $_POST['description'];
+    $categorie = $_POST['categorie'];
 
 
     $image_nom = $_FILES['image']['name'];
@@ -35,10 +36,11 @@ if (isset($_POST['id']) && isset($_POST['titre']) && isset($_FILES['image']['nam
         $image_nom = $resultat['image'];
     }
 
-    $req = $bdd->prepare("UPDATE portfolio SET titre = :titre, image = :image, description = :description WHERE id = :id");
+    $req = $bdd->prepare("UPDATE portfolio SET titre = :titre, image = :image, description = :description, categorie = :categorie WHERE id = :id");
     $req->bindParam(':titre', $titre);
     $req->bindParam(':image', $image_nom);
     $req->bindParam(':description', $description);
+    $req->bindParam(':categorie', $categorie);
     $req->bindParam(':id', $id);
 
     if ($req->execute()) {

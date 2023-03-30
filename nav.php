@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 ?>
 
 <?php
@@ -66,7 +68,7 @@ include_once('Traitement.php');
                     </li>
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" href="logout.php"
                         onclick="confirmLogout()">Déconnexion</a>
-                <?php
+                    <?php
                 }
                 ?>
 

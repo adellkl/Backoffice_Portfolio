@@ -21,41 +21,56 @@ include_once('nav.php');
                     <div class="screen-header-ellipsis"></div>
                 </div>
             </div>
+
             <div class="screen-body">
                 <div class="screen-body-item left">
                     <div class="app-title">
                         <span>CONTACTEZ MOI</span>
-                        <span></span>
+                        <span></span> <br>
+
+                    </div>
+
+                    <div class="app-map ">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.879298840614!2d2.3745885157538718!3d48.974822000455475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6697fd2eeccfb%3A0x2f4803cf34fe74a9!2sIUT%20de%20Cergy-Pontoise%20-%20site%20de%20Sarcelles!5e0!3m2!1sfr!2sfr!4v1679997936334!5m2!1sfr!2sfr"
+                            width="660" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="app-contact">CONTACT INFO : 0769137890</div>
+
                 </div>
                 <div class="screen-body-item">
                     <div class="app-form">
+
                         <form method="post" action="contact-traitement.php">
                             <div class="app-form-group">
-                                <input class="app-form-control" name="name" placeholder="NOM">
+                                <input class="app-form-control" name="nom" placeholder="NOM" required>
                             </div>
                             <div class="app-form-group">
-                                <input class="app-form-control" name="email" placeholder="EMAIL">
+                                <input class="app-form-control" name="email" placeholder="EMAIL" required>
                             </div>
                             <div class="app-form-group">
-                                <input class="app-form-control" name="subject" placeholder="OBJET">
+                                <input class="app-form-control" name="sujet" placeholder="OBJET" required>
                             </div>
                             <div class="app-form-group message">
-                                <input class="app-form-control" name="message" placeholder="MESSAGE">
+                                <input class="app-form-control" name="mess" placeholder="MESSAGE" required>
                             </div>
                             <div class="app-form-group buttons">
                                 <button type="reset" class="app-form-button">ANNULER</button>
                                 <button type="submit" class="app-form-button">ENVOYER</button>
                             </div>
                         </form>
-                    </div>
+                    </div> <br>
+                    <?php
+                    if (isset($_GET['message'])) {
+                        $message = $_GET['message'];
+                        echo "<div class='alert alert-success'role='alert'>$message</div>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- End Main Content -->
-<?php
-include_once('footer.php');
-?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -12,7 +12,6 @@ include_once('section-portfolio.php');
 include_once('about.php');
 ?>
 
-
 <?php
 include_once('footer.php');
 ?>

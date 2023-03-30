@@ -1,11 +1,4 @@
-<?php
-session_start();
 
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-  header("Location: admin.php"); 
-  exit(); 
-}
-?>
 
 <?php
 include_once('nav.php');
@@ -24,18 +17,19 @@ try {
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $req = $bdd->prepare("SELECT titre, image, description FROM portfolio WHERE id = :id");
+    $req = $bdd->prepare("SELECT titre, image, description, categorie FROM portfolio WHERE id = :id");
     $req->bindParam(':id', $id);
     $req->execute();
     $resultat = $req->fetch(PDO::FETCH_ASSOC);
     $titre = $resultat['titre'];
     $image = $resultat['image'];
     $description = $resultat['description'];
+    $categorie = $resultat['categorie'];
 } 
 ?>
 
 
-<br><br>
+<br><br><br><br>
 
 
 <div class="container mt-5">
@@ -59,6 +53,12 @@ if (isset($_GET['id'])) {
                                 required>
                         </div> <br>
                         <div class="form-group">
+                            <label for="categorie">catégorie de l'item: </label>
+                            <input type="text" class="form-control" name="categorie" value="<?php echo $categorie; ?>"
+                                required>
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="image">Modifier l'image : </label> <br> <br>
                            
                             <input type="file" id="image" name="image"> <br><br>
@@ -66,6 +66,7 @@ if (isset($_GET['id'])) {
                             <img src="assets/img/portfolio/<?php echo $image; ?>"
                                 alt="<?php echo $titre; ?>" style="max-width: 30%; height: auto;">
                         </div> <br>
+
                         <div class="form-group">
                             <label for="description">Modifier la description : </label>
                             <textarea class="form-control" id="description" name="description"
@@ -92,3 +93,5 @@ if (isset($_GET['id'])) {
   }
 }
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
