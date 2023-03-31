@@ -35,17 +35,8 @@ try {
     echo "Erreur : " . $e->getMessage();
 }
 
-if (isset($_GET['filter'])) {
-    $filter = $_GET['filter'];
-    if ($filter === 'all') {
-        $req = $bdd->query("SELECT * FROM portfolio");
-    } else {
-        $req = $bdd->prepare("SELECT * FROM portfolio WHERE categorie = :categorie");
-        $req->execute(array(':categorie' => $filter));
-    }
-} else {
-    $req = $bdd->query("SELECT * FROM portfolio");
-}
+$req = $bdd->query("SELECT * FROM portfolio");
+
 
 $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -69,10 +60,10 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
 
         <center>
             <div class="justify-content-center mb-2" role="group" aria-label="Filtrer les éléments">
-                <button type="button" class="btn btn-secondary btn-filter active" data-category="all">Tous</button>
-                <button type="button" class="btn btn-secondary btn-filter" data-category="Developpement web / Backend"
+                <button type="button" class="btn btn-secondary btn-filter active" data-name="all">Tous</button>
+                <button type="button" class="btn btn-secondary btn-filter" data-name="Developpement web / Backend"
                     style="margin-left: 10px; margin-right: 10px;">Développement web / Backend</button>
-                <button type="button" class="btn btn-secondary btn-filter" data-category="Developpement web / Frontend"
+                <button type="button" class="btn btn-secondary btn-filter" data-name="Developpement web / Frontend"
                     style="margin-left: 10px; margin-right: 10px;">Développement web / Frontend</button>
             </div>
         </center> <br>

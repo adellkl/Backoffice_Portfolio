@@ -18,11 +18,16 @@ Modifier les informations souhaitées dans les différents onglets
 
 Technologies utilisées :
 
+En ce qui concerne la fonctionnalité de filtrage pour les items, j'ai utilisé la librairie isotop.js
+
+Pour le developpement :
+
 PHP
 MySQL
 HTML
-CSS
-JavaScript
-Auteur
+CSS / bootstrap
+JavaScript / jquery / isotop
+
+Auteur :
 
 Ce projet a été développé par Adel Loukal .
