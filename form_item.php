@@ -1,5 +1,3 @@
-
-
 <?php
 include_once('nav.php');
 
@@ -25,7 +23,7 @@ if (isset($_GET['id'])) {
     $image = $resultat['image'];
     $description = $resultat['description'];
     $categorie = $resultat['categorie'];
-} 
+}
 ?>
 
 
@@ -33,47 +31,51 @@ if (isset($_GET['id'])) {
 
 
 <div class="container mt-5">
-<div class="row justify-content-center mb-3">
+    <div class="row justify-content-center mb-3">
         <div class="col-md-6">
-            <a href="modif-portfolio.php" class="btn btn-dark">Retour</a>
+            <a href="modif-portfolio.php" class="btn btn-dark" onclick="return confirmerRetour();">Retour</a>
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="text-center">Modifier l'item <p class="p-item"> <?php echo $titre; ?></p> </h4>
+                    <h4 class="text-center">Modifier l'item <p class="p-item">
+                            <?php echo $titre; ?>
+                        </p>
+                    </h4>
                 </div>
                 <div class="card-body">
                     <form method="post" action="Item-modif.php" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <div class="form-group">
                             <label for="titre">Titre de l'item : </label>
-                            <input type="text" class="form-control" name="titre" value="<?php echo $titre; ?>"
-                                required>
+                            <input type="text" class="form-control champ-modifie" name="titre"
+                                value="<?php echo $titre; ?>" required>
                         </div> <br>
                         <div class="form-group">
                             <label for="categorie">catégorie de l'item: </label>
-                            <input type="text" class="form-control" name="categorie" value="<?php echo $categorie; ?>"
-                                required>
+                            <input type="text" class="form-control champ-modifie" name="categorie"
+                                value="<?php echo $categorie; ?>" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="image">Modifier l'image : </label> <br> <br>
-                           
+
                             <input type="file" id="image" name="image"> <br><br>
-                             <p>Ancienne photo: </p>
-                            <img src="assets/img/portfolio/<?php echo $image; ?>"
-                                alt="<?php echo $titre; ?>" style="max-width: 30%; height: auto;">
+                            <p>Ancienne photo: </p>
+                            <img src="assets/img/portfolio/<?php echo $image; ?>" alt="<?php echo $titre; ?>"
+                                style="max-width: 30%; height: auto;">
                         </div> <br>
 
                         <div class="form-group">
                             <label for="description">Modifier la description : </label>
-                            <textarea class="form-control" id="description" name="description"
+                            <textarea class="form-control champ-modifie" id="description" name="description"
                                 rows="3"><?php echo $description; ?></textarea>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary btn-block" onclick="return confirmerModification();">Modifier l'item</button>                        <br><br>
+                        <button type="submit" class="btn btn-primary btn-block"
+                            onclick="return confirmerModification();">Modifier l'item</button> <br><br>
                     </form>
                 </div>
             </div>
@@ -84,14 +86,27 @@ if (isset($_GET['id'])) {
 
 <script>
     function confirmerModification() {
-  if (confirm("Voulez-vous vraiment modifier l'item ?")) {
-   
-    return true;
-  } else {
+        if (confirm("Voulez-vous vraiment modifier l'item ?")) {
 
-    return false;
-  }
-}
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+    function confirmerRetour() {
+        if (confirm("Retour sans modification ? ")) {
+
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+
+
+
 </script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
