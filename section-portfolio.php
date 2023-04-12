@@ -31,13 +31,14 @@ $password = 'root';
 try {
     $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
+} catch (PDOException $e) { // gerer les erreurs dans la requete
     echo "Erreur : " . $e->getMessage();
 }
 
 $req = $bdd->query("SELECT * FROM portfolio");
 
-
+// fetchAll : récupérer toutes les lignes retournées par la requête
+//  Le paramètre PDO::FETCH_ASSOC spécifie que chaque ligne sera renvoyée sous forme d'un tableau associatif 
 $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
 ?>
 

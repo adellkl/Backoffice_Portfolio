@@ -62,11 +62,18 @@ include_once('nav.php');
                         </form>
                     </div> <br>
                     <?php
+                    // envoyer le message de confirmation de l'envoi des donnee ou alors de l'erreur
                     if (isset($_GET['message'])) {
                         $message = $_GET['message'];
-                        echo "<div class='alert alert-success'role='alert'>$message</div>";
+                        if ($message === "Erreur") {
+                            echo "<div class='alert alert-danger' role='alert'>$message</div>";
+                        } else {
+                            echo "<div class='alert alert-success' role='alert'>$message</div>";
+                        }
                     }
                     ?>
+
+
                 </div>
             </div>
         </div>

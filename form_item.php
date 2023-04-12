@@ -1,13 +1,17 @@
 <?php
+// inclure le fichier de navigation
 include_once('nav.php');
 
+// définir les paramètres de la base de données
 $host = 'localhost';
 $dbname = 'nom_etudiant_portfolio';
 $username = 'root';
 $password = 'root';
 
+// établir la connexion à la base de données
 try {
     $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    // configurer le mode d'erreur en cas de problème
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
@@ -17,8 +21,11 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $req = $bdd->prepare("SELECT titre, image, description, categorie FROM portfolio WHERE id = :id");
     $req->bindParam(':id', $id);
+    // exécuter la requête
     $req->execute();
+    // récupérer le résultat de la requête
     $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    // stocker les informations dans des variables 
     $titre = $resultat['titre'];
     $image = $resultat['image'];
     $description = $resultat['description'];

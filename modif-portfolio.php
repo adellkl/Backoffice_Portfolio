@@ -11,20 +11,20 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 ?>
 
 <?php
-$host = 'localhost';
-$dbname = 'nom_etudiant_portfolio';
-$username = 'root';
-$password = 'root';
+$host = 'localhost'; // adresse du serveur de la base de données
+$dbname = 'nom_etudiant_portfolio'; // nom de la base de données
+$username = 'root'; // nom d'utilisateur de la base de données
+$password = 'root'; // mot de passe de la base de données
 
 try {
-    $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
+    $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password); // instanciation d'un objet PDO pour se connecter à la base de données
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // configuration pour générer des exceptions en cas d'erreur
+} catch (PDOException $e) { // capture d'une exception de type PDOException
+    echo "Erreur : " . $e->getMessage(); // affichage de l'erreur
 }
 
-$req = $bdd->query("SELECT * FROM portfolio");
-$donnees = $req->fetchAll(PDO::FETCH_ASSOC);
+$req = $bdd->query("SELECT * FROM portfolio"); // exécution d'une requête de sélection de toutes les entrées de la table portfolio
+$donnees = $req->fetchAll(PDO::FETCH_ASSOC); // récupération de toutes les données sous forme de tableau associatif
 ?>
 
 

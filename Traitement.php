@@ -6,27 +6,27 @@ $username = 'root';
 $password = 'root';
 
 try {
-    $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password); // Instanciation d'un objet PDO pour se connecter à la base de données
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Configuration pour générer des exceptions en cas d'erreur
 } catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
+    echo "Erreur : " . $e->getMessage(); // Affichage de l'erreur
 }
 
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $pseudo = $_POST['username'];
-    $mdp = $_POST['password'];
+if (isset($_POST['username']) && isset($_POST['password'])) { // Vérification de la présence des variables "username" et "password" dans le tableau POST
+    $pseudo = $_POST['username']; // Récupération du pseudo entré par l'utilisateur
+    $mdp = $_POST['password']; // Récupération du mot de passe entré par l'utilisateur
 
-    $req = $bdd->prepare("SELECT * FROM users WHERE username=:username");
-    $req->bindParam(':username', $pseudo);
+    $req = $bdd->prepare("SELECT * FROM users WHERE username=:username"); // Préparation de la requête de sélection de l'utilisateur correspondant au pseudo entré
+    $req->bindParam(':username', $pseudo); // Liaison de la variable $pseudo avec le paramètre nommé de la requête
     $req->execute();
 
     $resultat = $req->fetch();
 
-    if ($resultat && password_verify($mdp, $resultat['mdp'])) {
+    if ($resultat && password_verify($mdp, $resultat['mdp'])) { // Vérification que la requête a renvoyé un résultat et que le mot de passe entré correspond à celui stocké dans la base de données
 
-        session_start();
-        $_SESSION['username'] = $resultat['username'];
-        header('Location: index.php');
+        session_start(); // Démarrage de la session
+        $_SESSION['username'] = $resultat['username']; // Stockage du nom d'utilisateur dans une variable de session
+        header('Location: index.php'); // Redirection vers la page d'accueil
         exit();
     } else {
 
@@ -34,5 +34,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     }
 }
+
 
 ?>
