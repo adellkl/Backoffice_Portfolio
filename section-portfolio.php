@@ -60,21 +60,20 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
 
 
         <center>
-            <div class="justify-content-center mb-2" role="group" aria-label="Filtrer les éléments">
-                <button type="button" class="btn btn-secondary btn-filter active" data-name="all">All</button>
-                <button type="button" class="btn btn-secondary btn-filter" data-name="Developpement web / Backend"
-                    style="margin-left: 10px; margin-right: 10px;">Backend development</button>
-                <button type="button" class="btn btn-secondary btn-filter" data-name="Developpement web / Frontend"
-                    style="margin-left: 10px; margin-right: 10px;">Frontend development</button> <button type="button"
-                    class="btn btn-secondary btn-filter" data-name="design"
-                    style="margin-left: 10px; margin-right: 10px;">Design</button>
+            <div class="container">
+                <div class="justify-content-center mb-2" role="group" aria-label="Filtrer les éléments">
+                    <button type="button" class="btn btn-secondary btn-filter active" data-filter="all">All</button>
+                    <button type="button" class="btn btn-secondary btn-filter" data-filter="back-end">Backend
+                        development</button>
+                    <button type="button" class="btn btn-secondary btn-filter" data-filter="front-end">Frontend
+                        development</button>
+                    <button type="button" class="btn btn-secondary btn-filter" data-filter="design">Design</button>
+                </div>
             </div>
         </center> <br>
-
-
         <div class="row justify-content-center portfolio-items">
             <?php foreach ($donnees as $donnee): ?>
-                <div class="col-md-6 col-lg-4 mb-5 portfolio-item" data-name="<?= $donnee['categorie'] ?>">
+                <div class="col-md-6 col-lg-4 mb-5 portfolio-item" data-filter="<?= $donnee['categorie'] ?>">
                     <div class="portfolio-item mx-auto" data-bs-toggle="modal"
                         data-bs-target="#portfolioModal<?= $donnee['id'] ?>" id="portfolio<?= $donnee['id'] ?>">
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -89,61 +88,86 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </div>
 
+    </div>
 
-        <!-- Portfolio Modal -->
-        <?php foreach ($donnees as $donnee): ?>
-            <div class="portfolio-modal modal fade" id="portfolioModal<?= $donnee['id'] ?>" tabindex="-1"
-                aria-labelledby="portfolioModal<?= $donnee['id'] ?>" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header border-0">
-                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body text-center pb-6">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-8">
-                                        <!-- Portfolio Modal - Title-->
-                                        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
-                                            <?= $donnee['titre'] ?>
-                                        </h2><br>
-                                        <h3 class=" mb-0 ">
-                                            Catégorie :
-                                            <?= $donnee['categorie'] ?>
-                                        </h3>
-                                        <!-- Icon Divider-->
-                                        <div class="divider-custom">
-                                            <div class="divider-custom-line"></div>
-                                            <div class="divider-custom-icon">
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                            <div class="divider-custom-line"></div>
+
+
+
+
+
+
+
+    <!-- Portfolio Modal -->
+    <?php foreach ($donnees as $donnee): ?>
+        <div class="portfolio-modal modal fade" id="portfolioModal<?= $donnee['id'] ?>" tabindex="-1"
+            aria-labelledby="portfolioModal<?= $donnee['id'] ?>" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center pb-6">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                        <?= $donnee['titre'] ?>
+                                    </h2><br>
+                                    <h3 class=" mb-0 ">
+                                        Catégorie :
+                                        <?= $donnee['categorie'] ?>
+                                    </h3>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon">
+                                            <i class="fas fa-star"></i>
                                         </div>
-                                        <!-- Portfolio Modal - Image-->
-                                        <img class="img-fluid rounded mb-5"
-                                            src="assets/img/portfolio/<?= $donnee['image'] ?>"
-                                            alt="<?= $donnee['titre'] ?>" />
-                                        <!-- Portfolio Modal - Text-->
-                                        <p class="mb-4">
-                                            <?= $donnee['description'] ?>
-                                        </p>
-                                        <button class="btn btn-primary" data-bs-dismiss="modal">
-                                            <i class="fas fa-xmark fa-fw"></i>
-                                            Fermer
-                                        </button>
+                                        <div class="divider-custom-line"></div>
                                     </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/<?= $donnee['image'] ?>"
+                                        alt="<?= $donnee['titre'] ?>" />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        <?= $donnee['description'] ?>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Fermer
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
+        </div>
+    <?php endforeach; ?>
     </div>
     </div>
 
 </section>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
 
 
+    $(document).ready(function () {
+        $(".btn-filter").click(function () {
+            var value = $(this).attr('data-filter');
+            if (value == "all") {
+                $('.portfolio-item').show('1000');
+            } else {
+                $(".portfolio-item").not('.' + value).hide('3000');
+                $('.portfolio-item').filter('.' + value).show('3000');
+            }
+        });
+        if ($(".btn-filter").removeClass("active")) {
+            $(this).removeClass("active");
+        }
+        $(this).addClass("active");
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
