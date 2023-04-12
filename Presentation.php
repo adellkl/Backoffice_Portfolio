@@ -29,14 +29,15 @@ include_once('Traitement.php');
 <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
-        <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
+        <img class="masthead-avatar mb-5" src="assets/img/moi.png" alt="..." style="border-radius: 50%;" />
+
         <!-- Masthead Heading-->
         <h4 class="masthead-heading text-uppercase mb-0">
             <?php
             if (isset($_SESSION['username'])) {
-                echo "Bienvenu, " . $_SESSION['username'] . "!";
+                echo "Bienvenue, " . $_SESSION['username'] . "!";
             } else {
-                echo "Bienvenu cher visiteurs";
+                echo "Bienvenue chers visiteurs";
             }
             ?>
         </h4>
