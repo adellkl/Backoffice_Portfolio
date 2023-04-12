@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="text-center">Modifier l'item <p class="p-item">
+                    <h4 class="text-center">Modifier l'item :<p class="p-item">
                             <?php echo $titre; ?>
                         </p>
                     </h4>
@@ -61,13 +61,30 @@ if (isset($_GET['id'])) {
                                 value="<?php echo $titre; ?>" required>
                         </div> <br>
                         <div class="form-group">
-                            <label for="categorie">catégorie de l'item: </label>
-                            <input type="text" class="form-control champ-modifie" name="categorie"
-                                value="<?php echo $categorie; ?>" required>
+                            <label for="categorie">Catégorie de l'item :</label>
+                            <div class="select-wrapper">
+                                <select class="form-control" name="categorie" required>
+
+                                    <?php
+                                    $cat = $bdd->query("SELECT categories FROM categorie");
+                                    foreach ($cat as $c) {
+                                        $selected = '';
+                                        if ($categorie === $c['categories']) {
+                                            $selected = 'selected';
+                                        }
+                                        ?>
+                                        <option value="<?= $c['categories'] ?>" <?= $selected ?>><?= $c['categories'] ?>
+                                        </option>
+                                    <?php } ?>
+                                </select>
+                                <div class="select-arrow"></div>
+                            </div>
+
                         </div>
 
+                        <br>
                         <div class="form-group">
-                            <label for="image">Modifier l'image : </label> <br> <br>
+                            <label for="image">Modifier l'image : </label>
 
                             <input type="file" id="image" name="image"> <br><br>
                             <p>Ancienne photo: </p>

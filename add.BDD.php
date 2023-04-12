@@ -1,20 +1,29 @@
-<?php
-// inclusion de la barre de navigation
-include_once('nav.php');
-?>
+<!DOCTYPE html>
+<html lang="en">
 
-<?php
-// vérifier si l'utilisateur est connecté, sinon le rediriger vers la page de connexion
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-    header("Location: admin.php");
-    exit();
-}
-?>
-<!-- ajout de plusieurs sauts de ligne -->
-<br><br><br><br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/add_item.css">
+    <title>Ajouter a la base de donnée</title>
+</head>
 
 <body>
+    <?php
+    // inclusion de la barre de navigation
+    include_once('nav.php');
+    ?>
 
+    <?php
+    // vérifier si l'utilisateur est connecté, sinon le rediriger vers la page de connexion
+    if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+        header("Location: admin.php");
+        exit();
+    }
+    ?>
+    <!-- ajout de plusieurs sauts de ligne -->
+    <br><br><br><br>
 
     <div class="container mt-5">
 
@@ -45,9 +54,25 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="categorie">catégorie : </label>
-                                <input type="text" class="form-control" name="categorie" required>
+                                <label for="categorie" class="select-label">Catégorie :</label>
+                                <div class="select-wrapper">
+                                    <select class="form-control" name="categorie" required>
+                                        <option value="" disabled selected style="color: grey;">Sélectionnez une
+                                            catégorie</option>
+                                        <?php
+                                        $cat = $bdd->query("SELECT categories FROM categorie");
+                                        foreach ($cat as $categorie):
+                                            ?>
+                                            <option value="<?= $categorie['categories'] ?>"><?= $categorie['categories'] ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <div class="select-arrow"></div>
+                                </div>
                             </div>
+
+
+
                             <br>
 
 
@@ -77,3 +102,6 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 
     <br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

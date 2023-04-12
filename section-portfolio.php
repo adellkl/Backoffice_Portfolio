@@ -61,11 +61,13 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
 
         <center>
             <div class="justify-content-center mb-2" role="group" aria-label="Filtrer les éléments">
-                <button type="button" class="btn btn-secondary btn-filter active" data-name="all">Tous</button>
+                <button type="button" class="btn btn-secondary btn-filter active" data-name="all">All</button>
                 <button type="button" class="btn btn-secondary btn-filter" data-name="Developpement web / Backend"
-                    style="margin-left: 10px; margin-right: 10px;">Développement web / Backend</button>
+                    style="margin-left: 10px; margin-right: 10px;">Backend development</button>
                 <button type="button" class="btn btn-secondary btn-filter" data-name="Developpement web / Frontend"
-                    style="margin-left: 10px; margin-right: 10px;">Développement web / Frontend</button>
+                    style="margin-left: 10px; margin-right: 10px;">Frontend development</button> <button type="button"
+                    class="btn btn-secondary btn-filter" data-name="design"
+                    style="margin-left: 10px; margin-right: 10px;">Design</button>
             </div>
         </center> <br>
 

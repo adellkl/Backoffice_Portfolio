@@ -11,10 +11,10 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 ?>
 
 <?php
-$host = 'localhost'; // adresse du serveur de la base de données
-$dbname = 'nom_etudiant_portfolio'; // nom de la base de données
-$username = 'root'; // nom d'utilisateur de la base de données
-$password = 'root'; // mot de passe de la base de données
+$host = 'localhost';
+$dbname = 'nom_etudiant_portfolio';
+$username = 'root';
+$password = 'root';
 
 try {
     $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password); // instanciation d'un objet PDO pour se connecter à la base de données
