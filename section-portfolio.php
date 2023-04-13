@@ -45,7 +45,7 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-<section class="page-section portfolio" id="portfolio">
+<section class="page-section portfolio" id="images-section">
     <div class="container">
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
         <!-- Icon Divider-->
@@ -57,21 +57,23 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
             <div class="divider-custom-line"></div>
         </div>
 
-        <!--  ICI LES BOUTON DE FILTRES FONCTIONNENT PAS DONC JE LES METS EN COMMENTAIRE EN ATTENDANT DE LES FAIRES FONCTIONNER
-  
+
+
         <center>
             <div class="container">
-                <div class="justify-content-center mb-2" role="group" aria-label="Filtrer les éléments">
-                    <button type="button" class="btn btn-secondary btn-filter active" data-filter="all">All</button>
-                    <button type="button" class="btn btn-secondary btn-filter" data-filter="back-end">Backend
-                        development</button>
-                    <button type="button" class="btn btn-secondary btn-filter" data-filter="front-end">Frontend
-                        development</button>
-                    <button type="button" class="btn btn-secondary btn-filter" data-filter="design">Design</button>
+                <div class="d-flex justify-content-center mb-2" role="group" aria-label="Filtrer les éléments">
+                    <a href="index.php#images-section"><button type="button" class="btn btn-secondary btn-filter active"
+                            data-filter="all">Projet developpement web</button></a>
+                    <span style="width:10px;"></span>
+                    <a href="section—video.php#videos-section"><button type="button"
+                            class="btn btn-secondary btn-filter" data-filter="video">Projets vidéos</button></a>
                 </div>
             </div>
+
+
+
         </center> <br>
-        -->
+
 
         <div class="row justify-content-center portfolio-items">
             <?php foreach ($donnees as $donnee): ?>
