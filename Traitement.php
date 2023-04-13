@@ -13,11 +13,11 @@ try {
 }
 
 if (isset($_POST['username']) && isset($_POST['password'])) { // Vérification de la présence des variables "username" et "password" dans le tableau POST
-    $pseudo = $_POST['username']; // Récupération du pseudo entré par l'utilisateur
-    $mdp = $_POST['password']; // Récupération du mot de passe entré par l'utilisateur
+    $pseudo = $_POST['username'];
+    $mdp = $_POST['password'];
 
     $req = $bdd->prepare("SELECT * FROM users WHERE username=:username"); // Préparation de la requête de sélection de l'utilisateur correspondant au pseudo entré
-    $req->bindParam(':username', $pseudo); // Liaison de la variable $pseudo avec le paramètre nommé de la requête
+    $req->bindParam(':username', $pseudo);
     $req->execute();
 
     $resultat = $req->fetch();

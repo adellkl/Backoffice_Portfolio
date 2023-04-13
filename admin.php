@@ -12,8 +12,6 @@
 
 
 <body>
-
-
     <div class="lines">
         <div class="line"></div>
         <div class="line"></div>
@@ -28,30 +26,25 @@
                         <h4 class="text-center">Connexion Admin</h4>
                     </div>
                     <div class="card-body">
-
                         <form method="POST" action="traitement.php">
                             <div class="form-group">
                                 <label for="username">Nom d'utilisateur</label>
-                                <input type="text" class="form-control" name="username" required>
+                                <input type="text" class="form-control" name="username" autocomplete="off" required>
                             </div>
                             <div class="form-group">
                                 <label for="password">Mot de passe</label>
-                                <input type="password" class="form-control" name="password" required>
-                            </div> <br>
+                                <input type="password" class="form-control" name="password" autocomplete="off" required>
+                            </div>
 
-                            <button type="submit" class="btn btn-primary btn-block">Se connecter</button> <br><br>
-
+                            <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div><br>
-
-
-
-
-
+    </div>
 </body>
+
+
 
 </html>

@@ -24,11 +24,7 @@ include_once('nav.php');
 
             <div class="screen-body">
                 <div class="screen-body-item left">
-                    <div class="app-title">
-                        <span>CONTACTEZ MOI</span>
-                        <span></span> <br>
-
-                    </div>
+                    <br><br>
 
                     <div class="app-map ">
                         <iframe
@@ -41,6 +37,12 @@ include_once('nav.php');
                 </div>
                 <div class="screen-body-item">
                     <div class="app-form">
+                        <div class="app-title">
+                            <span>CONTACTEZ MOI</span>
+                            <span></span>
+
+                        </div> <br>
+
 
                         <form method="post" action="contact-traitement.php">
                             <div class="app-form-group">

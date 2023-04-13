@@ -31,6 +31,22 @@
     <div class="animated-text animate-on-scroll">
         <h4>Suivez moi sur les réseaux</h4>
         <div class="line"></div>
+        <div class="rating">
+            <form id="rating-form">
+                <span class="star" data-rating="1"></span>
+                <span class="star" data-rating="2"></span>
+                <span class="star" data-rating="3"></span>
+                <span class="star" data-rating="4"></span>
+                <span class="star" data-rating="5"></span>
+                <input type="hidden" name="rating" id="rating-value" />
+            </form>
+        </div>
+
+        <div class="average-rating">
+            <span class="stars"></span>
+            <span class="rating-value"></span>
+        </div>
+
 
     </div>
 

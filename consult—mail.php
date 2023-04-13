@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+    header("Location: admin.php");
+    exit();
+}
+?>
+
+<?php
 include_once('nav.php');
 ?> <br><br>
 
@@ -60,11 +68,13 @@ include_once('nav.php');
                 echo '<h5 class="card-title">' . $row['nom'] . '</h5>';
                 echo '<p class="card-text">' . $row['mess'] . '</p>';
                 echo '<p class="card-text"><small class="text-muted">' . $row['email'] . '</small></p>';
+                echo '<a href="mailto:' . $row['email'] . '" target="_blank" class="btn btn-primary">Répondre</a> ';
                 echo '<button id="supprimer-' . $row['id'] . '" class="btn btn-danger">Supprimer</button>';
+
 
                 echo '<script>
             var btnSupprimer = document.getElementById("supprimer-' . $row['id'] . '");
-            
+
             btnSupprimer.addEventListener("click", function() {
                 if (confirm("Voulez-vous vraiment supprimer ce message ?")) {
                     var xhr = new XMLHttpRequest();
@@ -90,6 +100,8 @@ include_once('nav.php');
         // Fermer la connexion à la base de données
         $connexion = null;
         ?>
+
+
 
     </div>
 

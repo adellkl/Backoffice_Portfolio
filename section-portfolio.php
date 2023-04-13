@@ -57,8 +57,8 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
             <div class="divider-custom-line"></div>
         </div>
 
-
-
+        <!--  ICI LES BOUTON DE FILTRES FONCTIONNENT PAS DONC JE LES METS EN COMMENTAIRE EN ATTENDANT DE LES FAIRES FONCTIONNER
+  
         <center>
             <div class="container">
                 <div class="justify-content-center mb-2" role="group" aria-label="Filtrer les éléments">
@@ -71,6 +71,8 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </div>
         </center> <br>
+        -->
+
         <div class="row justify-content-center portfolio-items">
             <?php foreach ($donnees as $donnee): ?>
                 <div class="col-md-6 col-lg-4 mb-5 portfolio-item" data-filter="<?= $donnee['categorie'] ?>">
@@ -89,7 +91,6 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
     </div>
-
 
 
 
@@ -154,20 +155,5 @@ $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
 <script>
 
 
-    $(document).ready(function () {
-        $(".btn-filter").click(function () {
-            var value = $(this).attr('data-filter');
-            if (value == "all") {
-                $('.portfolio-item').show('1000');
-            } else {
-                $(".portfolio-item").not('.' + value).hide('3000');
-                $('.portfolio-item').filter('.' + value).show('3000');
-            }
-        });
-        if ($(".btn-filter").removeClass("active")) {
-            $(this).removeClass("active");
-        }
-        $(this).addClass("active");
-    });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

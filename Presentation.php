@@ -29,9 +29,10 @@ include_once('Traitement.php');
 <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
-        <img class="masthead-avatar mb-5" src="assets/img/moi.png" alt="..." style="border-radius: 50%;" />
 
-        <!-- Masthead Heading-->
+        <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." style="border-radius: 50%;" />
+
+
         <h4 class="masthead-heading text-uppercase mb-0">
             <?php
             if (isset($_SESSION['username'])) {
