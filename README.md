@@ -1,10 +1,10 @@
-# Backoffice_Portfolio
+Backoffice_Portfolio
 
-Description
+Description :
 
 Ce repository contient les fichiers nécessaires pour mettre en place un backoffice pour un portfolio. Ce backoffice permettra de modifier le contenu du portfolio en liaison avec une base de données PHPMyAdmin.
 
-Installation
+Installation :
 
 Cloner ce repository sur votre machine
 Importer la base de données fournie dans PHPMyAdmin
@@ -21,7 +21,6 @@ Technologies utilisées :
 En ce qui concerne la fonctionnalité de filtrage pour les items, j'ai utilisé la librairie isotop.js
 
 Pour le developpement :
-
 PHP
 MySQL
 HTML
