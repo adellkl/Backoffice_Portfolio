@@ -25,6 +25,12 @@ Configurer le fichier config.php avec les informations de connexion à la base d
 **Back:** PHP,
 MySQL
 
+## Log backoffice
+
+user : adel
+password : loulou
+
+
 ## Color Reference
 
 | Color             | Hex                                                                |
