@@ -1,32 +1,57 @@
-Backoffice_Portfolio
 
-Description :
-
+# Backoffice_Portfolio
 Ce repository contient les fichiers nécessaires pour mettre en place un backoffice pour un portfolio. Ce backoffice permettra de modifier le contenu du portfolio en liaison avec une base de données PHPMyAdmin.
 
-Installation :
+
+
+
+## Installation
 
 Cloner ce repository sur votre machine
+
 Importer la base de données fournie dans PHPMyAdmin
+
 Configurer le fichier config.php avec les informations de connexion à la base de données
 
-Utilisation :
+```bash
+  git clone 
+```
+    
 
-Se rendre sur la page index.php pour accéder au backoffice
-Se connecter avec les identifiants fournis dans le fichier admin.php
-Modifier les informations souhaitées dans les différents onglets
+## Tech Stack
 
-Technologies utilisées :
+**Front:** HTML, CSS / bootstrap, JavaScript / jquery / isotop
 
-En ce qui concerne la fonctionnalité de filtrage pour les items, j'ai utilisé la librairie isotop.js
-
-Pour le developpement :
-PHP
+**Back:** PHP,
 MySQL
-HTML
-CSS / bootstrap
-JavaScript / jquery / isotop
 
-Auteur :
+## Color Reference
 
-Ce projet a été développé par Adel Loukal .
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Couleurs principale| ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
+| Couleurs secondaire| ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
+
+
+
+
+## FAQ
+
+#### En combien de temps tu as coder ce portfolio ? 
+
+Je dirais en 1 mois et quelques jours. 
+
+#### As-tu pris du plaisir à coder ? 
+
+Étonnamment, oui j'ai pris énormément de plaisir à coder ce portfolio et encore plus étonnant car j'aime pas trop le back end mais la hache de guerre est enterrée désormais. 
+## Feedback
+
+Si vous avez un feedback à me transmettre, n'hésitez surtout pas à me contacter. 
+
+Si cela peut m'aider à progresser, je suis preneur. Mon adresse e-mail est adelloukal2@gmail.com."
+
+
+## Authors
+
+- [@adel loukal](https://github.com/adellkl)
+
