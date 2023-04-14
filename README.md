@@ -9,7 +9,7 @@ Ce repository contient les fichiers nécessaires pour mettre en place un backoff
 
 Cloner ce repository sur votre machine
 
-Importer la base de données fournie dans PHPMyAdmin
+Importer la base de données fournie dans PHPMyAdmin qui est dans le fichier "BD_phpmyadmin"
 
 Configurer le fichier config.php avec les informations de connexion à la base de données
 
