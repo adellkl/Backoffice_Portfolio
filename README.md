@@ -27,8 +27,11 @@ MySQL
 
 ## Log backoffice
 
-user : adel
+user : adel 
+
 password : loulou
+
+
 
 
 ## Color Reference
