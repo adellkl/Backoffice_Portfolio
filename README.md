@@ -3,6 +3,15 @@
 Ce repository contient les fichiers nécessaires pour mettre en place un backoffice pour un portfolio. Ce backoffice permettra de modifier le contenu du portfolio en liaison avec une base de données PHPMyAdmin.
 
 
+<img width="1425" alt="Capture d’écran 2024-06-10 à 12 46 04" src="https://github.com/adellkl/CRUD_Portfolio/assets/114930826/94c4d022-410b-4c6c-b440-4eca4769a286">
+<img width="1425" alt="Capture d’écran 2024-06-10 à 12 46 43" src="https://github.com/adellkl/CRUD_Portfolio/assets/114930826/bdd7730a-d631-4338-9f46-6682e59b5ded">
+<img width="1425" alt="Capture d’écran 2024-06-10 à 12 46 53" src="https://github.com/adellkl/CRUD_Portfolio/assets/114930826/7920c50a-38af-49fc-8257-19123184628c">
+<img width="1425" alt="Capture d’écran 2024-06-10 à 12 46 57" src="https://github.com/adellkl/CRUD_Portfolio/assets/114930826/a4fcbf55-7764-4d6a-a215-254d1c778cf8">
+<img width="1425" alt="Capture d’écran 2024-06-10 à 12 46 25" src="https://github.com/adellkl/CRUD_Portfolio/assets/114930826/0fc1d02c-e67d-4632-a63e-b7a3e75bd224">
+
+
+https://github.com/adellkl/CRUD_Portfolio/assets/114930826/3a0ab307-0f6c-4616-aa61-683182d83e01
+
 
 
 ## Installation
@@ -59,4 +68,6 @@ Si cela peut m'aider à progresser, je suis preneur. Mon adresse e-mail est adel
 ## Authors
 
 - [@adel loukal](https://github.com/adellkl)
+
+
 
